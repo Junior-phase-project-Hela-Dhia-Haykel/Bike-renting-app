@@ -14,6 +14,7 @@ const bikeSchema = new mongoose.Schema({
   }
 );
 
-const Bike = db.model('Bike', bikeSchema);
+
+const Bike = mongoose.model('Bike', bikeSchema);
 
 module.exports = Bike;
