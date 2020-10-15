@@ -2,6 +2,10 @@ body {
     color: rgb(22, 24, 184);
     background-color: #b5e1ec;
 }
+.choose-bike {
+    width: 50%;
+    margin-top: 10px;
+}
 .bike {
     display: grid;
     grid-template-rows: auto auto auto;
@@ -40,18 +44,17 @@ body {
     margin-left: 10px;
     color: #f3f3f3;
   }
-  /* button {
+  button {
     cursor: pointer;
     border: none;
     border-radius: 3px;
     font-family: 'PT Serif', sans-serif;
     color: #ECF0F1;
     background-color: #E74C3C;
-  } */
-  .add h2 {
-    border-bottom: 1px solid #777777;
-    width: 90%;
-    font-family: 'Francois One';
+  }
+  .add {
+    margin-left: 10px;
+    font-weight: bold;
   }
   
   .add-bike {

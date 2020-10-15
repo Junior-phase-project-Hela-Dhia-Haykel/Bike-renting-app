@@ -27,13 +27,13 @@ class Admin extends React.Component {
         return (
             <div className="add">
                 <div className="add-bike">
-                    <h2>Enter information for the new bike</h2>
+                    <h3>Enter information for the new bike</h3>
             <form>
-                <input className="input" type="text" name="model" onChange={this.handleEventOnChange}/>
-                <input className="input" type="number" name="price" />
-                <input className="input" type="text" name="imageUrl" />
-                <textarea className="textarea" name="description" cols="30" rows="10"></textarea>
-                <button className="submit-button" type="submit" onClick={this.handleEventOnClick}>Add Bike</button>
+                Model: <input className="input" type="text" name="model" onChange={this.handleEventOnChange}/>
+                Price: <input className="input" type="number" name="price" onChange={this.handleEventOnChange}/>
+                Image: <input className="input" type="text" name="imageUrl" onChange={this.handleEventOnChange}/>
+                Description: <textarea className="textarea" name="description" cols="30" rows="10" onChange={this.handleEventOnChange}></textarea>
+                <button className="btn btn-success" type="submit" onClick={this.handleEventOnClick}>Add Bike</button>
             </form>
             </div>
             </div>

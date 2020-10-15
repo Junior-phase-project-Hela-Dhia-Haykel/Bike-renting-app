@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import Bike from './components/Bike.jsx';
 import Admin from './components/Admin.jsx';
+import Date from './components/Date.jsx'
 
 
 class App extends React.Component {
@@ -12,6 +13,7 @@ class App extends React.Component {
             data: [],
             view: 'home'
         }
+        this.changeView = this.changeView.bind(this);
     }
     componentDidMount() {
         $.get('/app/store').then(results => {
@@ -47,9 +49,9 @@ class App extends React.Component {
 
                     {this.state.view === 'home' ?
                     <div>
-                    <div className="input-group">
-                        <label for="bikes">Choose a Model:</label>
-                        <select className="custom-select" id="bikes" name="bikes">
+                    <div className="input-group choose-bike">
+                        <select className="custom-select" id="bikes" name="bikes" defaultValue='Choose a bike model...'>
+                            {/* <option selected>Choose a bike model...</option> */}
                             {this.state.data.map(bike => <option key={bike.id} value={bike.model}>{bike.model}</option>)}
                         </select>
                         <button className="btn btn-outline-secondary" onClick={() => this.changeView('date')}>Check</button>
@@ -57,7 +59,9 @@ class App extends React.Component {
                     </div>
                     : this.state.view === 'admin' ?
                     <Admin />
-                    : null
+                    : this.state.view === 'date' ?
+                    <Date changeView= {this.changeView}/>
+                    :null
                 }
                     
                 
