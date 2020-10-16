@@ -10,10 +10,36 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(express.static(__dirname + '../../dist'));
 
-app.post("/userInformation", (req,res)=>{
-     console.log(req.body)
-     res.send('');
+//add a user to the dataBase:
+
+//app.post("/userInformation", (req,res)=>{
+//     addNewClient(req.body).then((response)=>{
+ //         res.send(response._id);
+ //    })
+//});
+
+app.post('/user',(req,res)=>{
+  var user=new user(req.body);
+  user.save((err,user)=>{
+       res.json(user)
+  });
 });
+ 
+//update user's infos in the database
+app.put('/user/:id', (req,res)=>{
+     var condition={_id: req.params.id};
+     user.update(condition, req.body)
+     .then(doc=>{
+          if(!doc){
+               return res.status(404).end();
+          }
+               return res.status(200).json(doc);
+     }).catch(err =>{
+          console.log(error);
+     })
+})
+//add abike in the database
+//delete a bike from the database
 app.get("/api/bike", getBikeByModel);
 app.get("/api/homePage", getBikeRandom);
 
