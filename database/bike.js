@@ -11,8 +11,22 @@ const bikeSchema = new mongoose.Schema({
     timestamps: true
   }
 );
+let findBikeByModel = (model) => {
+  return Bike.find({model:model}) 
+ };
+
+
+ let findBike = (number) => {
+   return Bike.find()
+     .limit(number);
+ };
 
 
 const Bike = mongoose.model('Bike', bikeSchema);
 
-module.exports = Bike;
+module.exports ={
+ 
+    findBikeByModel,
+    findBike,
+    Bike
+  }

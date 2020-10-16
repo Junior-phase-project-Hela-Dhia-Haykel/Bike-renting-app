@@ -13,18 +13,6 @@ db.once('open', () => {
 });
 
 
-let findBikeByModel = (model) => {
-    return Bike.find({model:model}) 
-   };
 
 
-   let findBike = (number) => {
-     return Bike.find()
-       .limit(number);
-   };
 
-
-module.exports = {
-  findBikeByModel,
-  findBike
-}
