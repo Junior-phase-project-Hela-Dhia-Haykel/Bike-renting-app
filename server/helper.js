@@ -2,7 +2,7 @@
 const {fetchBikeByModel,fetchBike}=require('../database/bike.js')
 //function getBikeByModel will get bike from the database based on the model
 exports.getBikeByModel = (req, res)=> {
-   fetchBikeByModel()
+   fetchBikeByModel(model)
    .then(bikes=>{
        return res.status(200).json(bikes);
    })
