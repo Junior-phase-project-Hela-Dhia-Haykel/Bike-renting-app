@@ -11,12 +11,12 @@ const bikeSchema = new mongoose.Schema({
     timestamps: true
   }
 );
-let findBikeByModel = (model) => {
+let getBikeByMode = (model) => {
   return Bike.find({model:model}) 
  };
 
 
- let findBike = (number) => {
+ let getBikeRandom = (number) => {
    return Bike.find()
      .limit(number);
  };
@@ -26,7 +26,7 @@ const Bike = mongoose.model('Bike', bikeSchema);
 
 module.exports ={
  
-    findBikeByModel,
-    findBike,
+    getBikeByMode,
+    getBikeRandom,
     Bike
   }

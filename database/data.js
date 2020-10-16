@@ -96,7 +96,7 @@ const simpleData = [
         daysOfService: "0",
     },
     {
-        model: "Womens Bike",
+        model: "Women Bike",
         price:39.00,
         imageUrl: "https://i1.adis.ws/i/washford/566320?w=740&h=555&qlt=75&fmt=webp&v=1",
         description: "Apollo has gained a reputation for manufacturing quality bikes that offer exceptional value for money, and the Apollo Twilight certainly ticks both of these boxes. Mixing solid build quality with premium components, you’ll get plenty of bang for your buck with an Apollo Twilight Womens Mountain Bike.",
