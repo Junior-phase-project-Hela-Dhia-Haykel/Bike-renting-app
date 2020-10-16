@@ -6,7 +6,7 @@ const Bike = require('../database/bike.js');
 const User =require('../database/User.js')
 
 const app = express();
-const { getBikeByModel, getBikeRandom}=require('./helper.js')
+const { getBikeByModel, getAllData} = require('./helper.js')
 const PORT = 3000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -21,12 +21,15 @@ app.use(express.static(__dirname + '../../dist'));
 //});
 
 app.post('/user',(req,res)=>{
-  var user=new user(req.body);
-  user.save((err,user)=>{
-       res.json(user)
+ 
+  User.update({firstName:req.body.firstName, lastName:req.body.lastName}, req.body,{upsert:true}).then(user =>{
+       console.log(user)
+       res.send('user added')
   });
 });
  
+
+
 //update user's infos in the database
 app.put('/user/:id', (req,res)=>{
      var condition={_id: req.params.id};
@@ -50,8 +53,8 @@ app.post('/bike',(req,res)=>{
 });
 
 //delete a bike from the database
-app.get("/api/bike", getBikeByModel);
-app.get("/api/homePage", getBikeRandom);
+app.get("/api/bike", getAllData);
+// app.get("/api/homePage", getBikeByModel);
 
 
 
