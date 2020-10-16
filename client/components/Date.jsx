@@ -19,7 +19,6 @@ class Date extends React.Component {
     }
     handleEventOnClick() {
         this.props.changeView('choice');
-        console.log(typeof this.state.return)
         this.props.setPeriod(this.state.pickup, this.state.return);
     }
 
@@ -29,9 +28,9 @@ class Date extends React.Component {
                 <div className="add">
                     <h2>Pickup and Return Dates </h2>
                     <form>
-                        Pickup <input className="input" type='date' name="pickup" onChange={this.handleEventOnChange}/>
-                        Return <input className="input" type="date" name="return" onChange={this.handleEventOnChange}/>
-                        <button className="btn btn-primary" type="submit" onClick={this.handleEventOnClick}>Select Bike</button>
+                        Pickup <input className="input" type="date" name="pickup" onChange={this.handleEventOnChange} required/>
+                        Return <input className="input" type="date" name="return" onChange={this.handleEventOnChange} required/>
+                        <button className="btn btn-primary" onClick={this.handleEventOnClick}>Select Bike</button>
                     </form>
                     <div className='rules'>
                         <h3>Rental Rules and Safety Guidelines</h3> PLEASE DO:
