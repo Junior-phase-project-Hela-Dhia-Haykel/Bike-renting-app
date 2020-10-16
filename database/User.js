@@ -15,7 +15,7 @@ const userSchema = new mongoose.Schema({
 const User = mongoose.model('User', userSchema);
 const addNewClient=(infos)=>{
   var {firstName, lastName, email, adress, zipCode, city, phone}=infos;
-  return user.create({firstName, lastName, email, adress, zipCode, city, phone})
+  return User.create({firstName, lastName, email, adress, zipCode, city, phone})
 }
 module.exports.addNewClient=addNewClient;
 module.exports = User;
