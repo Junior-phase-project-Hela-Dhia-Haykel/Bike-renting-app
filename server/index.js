@@ -1,9 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-
-const Bike = require('../database/bike.js');
-const User =require('../database/User.js')
-
+const db = require('../database/index.js');
 const app = express();
 const { getBikeByModel, getBikeRandom}=require('./helper.js')
 const PORT = 3000;
@@ -40,15 +37,7 @@ app.put('/user/:id', (req,res)=>{
           console.log(error);
      })
 })
-
-//add a bike in the database
-app.post('/bike',(req,res)=>{
-     var Bike= new Bike(req.body);
-     Bike.save((err,Bike)=>{
-          res.json(bike)
-     });
-});
-
+//add abike in the database
 //delete a bike from the database
 app.get("/api/bike", getBikeByModel);
 app.get("/api/homePage", getBikeRandom);
