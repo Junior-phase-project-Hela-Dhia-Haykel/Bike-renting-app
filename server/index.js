@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const Bike = require('../database/bike.js');
-const User =require('../database/User.js')
+//const User =require('../database/User.js')
 const app = express();
 const { getBikeByModel, getBikeRandom}=require('./helper.js')
 const PORT = 3000;
