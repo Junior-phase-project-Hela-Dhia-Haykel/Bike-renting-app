@@ -5,7 +5,7 @@ const Bike = require('../database/bike.js');
 const User =require('../database/User.js')
 
 const app = express();
-const { getBikeByModel, getBikeRandom}=require('./helper.js')
+const { getBikeByModel, getAllData}=require('./helper.js')
 const PORT = 3000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -50,8 +50,8 @@ app.post('/bike',(req,res)=>{
 });
 
 //delete a bike from the database
-app.get("/api/bike", getBikeByModel);
-app.get("/api/homePage", getBikeRandom);
+app.get("/api/bike", getAllData);
+// app.get("/api/homePage", getBikeByModel);
 
 
 

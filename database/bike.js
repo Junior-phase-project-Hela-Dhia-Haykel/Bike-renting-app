@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const db = require('./index.js')
 const bikeSchema = new mongoose.Schema({
   model: String,
   price: Number,
@@ -11,22 +12,21 @@ const bikeSchema = new mongoose.Schema({
     timestamps: true
   }
 );
+const Bike = db.model('Bike', bikeSchema);
 let findBikeByModel = (model) => {
-  return Bike.find({model:model}) 
+  return Bike.find({model}) 
  };
 
 
- let findBike = (number) => {
-   return Bike.find()
-     .limit(number);
+ let getAll = () => {
+   return Bike.find();
  };
 
 
-const Bike = mongoose.model('Bike', bikeSchema);
+
 
 module.exports ={
- 
     findBikeByModel,
-    findBike,
+    getAll,
     Bike
   }
