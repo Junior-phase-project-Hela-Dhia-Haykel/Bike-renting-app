@@ -1,10 +1,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const Bike = require('../database/bike.js')
+const db = require('../database/index.js');
 const app = express();
 const { getBikeByModel, getBikeRandom}=require('./helper.js')
 const PORT = 3000;
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
