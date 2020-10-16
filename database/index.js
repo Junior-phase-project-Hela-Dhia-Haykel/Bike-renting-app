@@ -3,19 +3,14 @@ const Bike = require('./bike');
 
 const mongoUri = 'mongodb://localhost:27017/bikeapp';
 
-const db = mongoose.connect(mongoUri, {useNewUrlParser: true},  
-    function(err) {
-    if (err) console.log(err);
-    console.log(`database was created`);
-  });
+mongoose.connect(mongoUri, {useNewUrlParser: true});
 
-   mongoose.connection
-  .once("open", () => {
-    console.log("the connection was made");
-  })
-  .on("error", (error) => {
-    console.log("faild to connect to database");
-  });
+const db = mongoose.connection;
+
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', () => {
+  console.log('Connected')
+});
 
 
 let findBikeByModel = (model) => {
@@ -28,6 +23,8 @@ let findBikeByModel = (model) => {
        .limit(number);
    };
 
-module.exports = db;
-module.exports = findBikeByModel;
-module.exports = findBike;
+
+module.exports = {
+  findBikeByModel,
+  findBike
+}
