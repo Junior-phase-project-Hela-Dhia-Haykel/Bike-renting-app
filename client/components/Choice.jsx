@@ -47,7 +47,7 @@ class Choice extends React.Component {
                  
                     <div  className="bike-row">
                     <div className="bike-data"><img src={this.props.bike.imageUrl} className="bikePreview"/></div>
-                    <div className="bike-data"><input className="input" type='number' min='1' max={String(this.props.bike.Quantity)} name="quantity" onChange={this.handleEventOnChange}/></div>
+                    <div className="bike-data"><input className="input" type='number' min='1' max={String(this.props.bike.quantity)} name="quantity" onChange={this.handleEventOnChange}/></div>
                     <div className="bike-data">{this.props.bike.price}</div>
                     <div className="bike-data">{this.props.bike.model}</div>
                     </div>
