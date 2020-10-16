@@ -20,5 +20,13 @@ exports.getAllData = (req,res)=>{
     .catch((err)=>{
         return res.status(500).send(err);
     });
-}    
+} 
+//function to update users
+exports.updateUser=(req,res)=>{
+ 
+    User.update({firstName:req.body.firstName, lastName:req.body.lastName}, req.body,{upsert:true}).then(user =>{
+         console.log(user)
+         res.send('user added')
+    });
+  }  
 
