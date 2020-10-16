@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(express.static(__dirname + '../../dist'));
 
-//add a user to the dataBase:
+//add or update a user to the dataBase:
 //app.post("/userInformation", (req,res)=>{
 //     addNewClient(req.body).then((response)=>{
  //         res.send(response._id);
