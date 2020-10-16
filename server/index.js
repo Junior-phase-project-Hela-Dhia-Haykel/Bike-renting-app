@@ -28,7 +28,13 @@ app.post('/user',(req,res)=>{
   });
 });
  
-
+//add new bike model to the database
+app.post('/admin/addmodel', (req,res) => {
+     Bike.Bike.update({model: req.body.model}, req.body,{upsert:true}).then(user =>{
+          console.log(user)
+          res.send('user added')
+     });
+})
 
 //update user's infos in the database
 app.put('/user/:id', (req,res)=>{

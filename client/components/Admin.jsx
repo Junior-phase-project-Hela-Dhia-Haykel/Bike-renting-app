@@ -27,7 +27,8 @@ class Admin extends React.Component {
         })
     }
     handleEventOnClick() {
-        $.post('/admin/addmodel', {model: this.state}, (err,results) => {
+        var newBike = {model: this.state.model, price: this.state.price, imageUrl: this.state.imageUrl, description: this.state.description, quantity: this.state.quantity};
+        $.post('/admin/addmodel', newBike, (err,results) => {
             if(err) console.log(err);
             else {
                 console.log(results);
@@ -61,15 +62,6 @@ class Admin extends React.Component {
                 <button className="btn btn-success" type="submit" onClick={this.handleEventOnClick}>Add Bike</button>
             </form>
             </div>
-            </div>
-            <div>
-                <div className="input-group choose-bike">
-                        <select className="custom-select" id="bikes" name="bikeModel" onChange={this.handleEventOnChange}>
-                            <option defaultValue>Choose a bike model...</option>
-                            {this.props.data.map(bike => <option key={bike._id} value={bike.model}>{bike.model}</option>)}
-                        </select>
-                        <button className="btn btn-outline-secondary" onClick={() => console.log()}>Check</button>
-                    </div>
             </div>
             </div>
             :

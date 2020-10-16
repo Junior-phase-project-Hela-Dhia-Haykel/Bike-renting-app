@@ -12,8 +12,8 @@ const Reservation = (props) => (
         </div>
         <div>
         <p>{props.model}</p>
-        <span> 💰 Your Total is : {props.total}</span>
-        <button className="btn btn-primary" type="submit" onClick={()=>this.changeView('home')}>Done !</button>
+        <span> 💰 Your Total is : {props.total} DT</span><br/>
+        <button className="btn btn-primary" type="submit" onClick={()=>props.changeView('home')}>Done !</button>
         </div>
      
     </div>

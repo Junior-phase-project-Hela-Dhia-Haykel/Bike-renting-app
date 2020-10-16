@@ -35,6 +35,7 @@ class Info extends React.Component {
             phone: this.state.phone
         },'json')
         this.props.changeView('reservation');
+        this.props.setInfo(this.state.firstName, this.state.lastName, this.state.phone)
     }
 
 

@@ -14,9 +14,10 @@ class App extends React.Component {
         this.state = {
             data: [],
             view: 'home',
-            chosenModel: '',
+            chosenModel: {},
             pickupDate: 0,
             returnDate: 0,
+            period: 0,
             total: 0,
             userName: '',
             userPhone: 0
@@ -25,6 +26,7 @@ class App extends React.Component {
         this.handleEventSelect = this.handleEventSelect.bind(this);
         this.setTotal = this.setTotal.bind(this);
         this.setPeriod = this.setPeriod.bind(this);
+        this.getUserInfo = this.getUserInfo.bind(this);
 
     }
     componentDidMount() {
@@ -41,14 +43,24 @@ class App extends React.Component {
         })
     }
     setTotal(total) {
+        console.log(total)
         this.setState({
-            total: total * (this.state.returnDate - this.state.pickupDate)
+            total: Number(total) * this.state.period
         })
     }
     setPeriod(pickupDate, returnDate) {
+        var period =  (Number(returnDate.split('-')[1]) - Number(pickupDate.split('-')[1]))*30 + (Number(returnDate.split('-')[2]) - Number(pickupDate.split('-')[2]))
+        console.log(period, pickupDate, returnDate)
         this.setState({
             pickupDate: pickupDate,
-            returnDate: returnDate
+            returnDate: returnDate,
+            period: period
+        })
+    }
+    getUserInfo(firstName, lastName, phone) {
+        this.setState({
+            userName: firstName + lastName,
+            userPhone: phone
         })
     }
     handleEventSelect(e) {
@@ -57,7 +69,6 @@ class App extends React.Component {
         this.setState({
             chosenModel: currentModel[0]
         })
-       setTimeout(() => {console.log(this.state.chosenModel)},100) 
     }
 
     render() {
@@ -81,6 +92,7 @@ class App extends React.Component {
 
                     {this.state.view === 'home' ?
                     <div>
+                        {/* description for the services of the company */}
                     <div className="input-group choose-bike">
                         <select className="custom-select" id="bikes" name="bikes" onChange={this.handleEventSelect}>
                             <option defaultValue>Choose a bike model...</option>
@@ -96,9 +108,9 @@ class App extends React.Component {
                     : this.state.view === 'choice' ?
                     <Choice bike = {this.state.chosenModel} changeView= {this.changeView} setTotal={this.setTotal} />
                     : this.state.view === 'info' ?
-                    <Info changeView= {this.changeView} />
+                    <Info changeView= {this.changeView} setInfo={this.getUserInfo} />
                     : this.state.view === 'reservation' ?
-                    <Reservation changeView= {this.changeView} />
+                    <Reservation userName= {this.state.userName} phone = {this.state.userPhone} pickup = {this.state.pickupDate} return = {this.state.returnDate} model = {this.state.chosenModel.model} total = {this.state.total} changeView= {this.changeView} />
                     :null
                 }
                     
