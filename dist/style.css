@@ -2,9 +2,13 @@ body {
     color: rgb(22, 24, 184);
     background-color: #b5e1ec;
 }
+.rules {
+    color: darkred;
+}
 .choose-bike {
     width: 50%;
     margin-top: 10px;
+    margin-left: 10px;
 }
 .bike {
     display: grid;
@@ -85,4 +89,47 @@ body {
     margin-top: 15px;
     font-size: .9em;
     height: 30px;
+  }
+
+  .bikes {
+    margin: 20px;
+  }
+  
+  .bike-table {
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 0.5rem;
+    line-height: 1.5;
+    flex: 1 1 auto;
+    border: 1px solid #d0d0d0;
+  }
+  
+  .bike-header {
+    display: none;
+    font-weight: 700;
+    font-size: 1.1em;
+    background-color: #f2f2f2;
+  }
+  
+  .bike-header > .bike-data {
+    white-space: normal;
+  }
+  
+  .bike-row {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+  }
+  .bike-data {
+    display: flex;
+    flex-flow: row nowrap;
+    flex-grow: 1;
+    flex-basis: 0;
+    padding: 0.5em;
+    word-break: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0px;
+    white-space: nowrap;
+    border-bottom: 1px solid #d0d0d0;
   }

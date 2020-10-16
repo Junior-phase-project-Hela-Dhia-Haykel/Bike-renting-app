@@ -1,18 +1,19 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+
 const Bike = require('../database/bike.js');
-//const User =require('../database/User.js')
+
+const User =require('../database/User.js')
+
 const app = express();
 const { getBikeByModel, getBikeRandom}=require('./helper.js')
 const PORT = 3000;
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(express.static(__dirname + '../../dist'));
 
 //add a user to the dataBase:
-
 //app.post("/userInformation", (req,res)=>{
 //     addNewClient(req.body).then((response)=>{
  //         res.send(response._id);

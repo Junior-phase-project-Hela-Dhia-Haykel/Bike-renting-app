@@ -4,6 +4,8 @@ import $ from 'jquery';
 import Bike from './components/Bike.jsx';
 import Admin from './components/Admin.jsx';
 import Date from './components/Date.jsx'
+import Choice from './components/Choice.jsx';
+import Info from './components/Info.jsx';
 
 
 class App extends React.Component {
@@ -11,7 +13,8 @@ class App extends React.Component {
         super(props)
         this.state = {
             data: [],
-            view: 'home'
+            view: 'home',
+            chosenModel: ''
         }
         this.changeView = this.changeView.bind(this);
     }
@@ -60,7 +63,13 @@ class App extends React.Component {
                     : this.state.view === 'admin' ?
                     <Admin />
                     : this.state.view === 'date' ?
-                    <Date changeView= {this.changeView}/>
+                    <Date changeView= {this.changeView} />
+                    : this.state.view === 'choice' ?
+                    <Choice changeView= {this.changeView} />
+                    : this.state.view === 'info' ?
+                    <Info changeView= {this.changeView} />
+                    : this.state.view === 'reservation' ?
+                    <Reservation changeView= {this.changeView} />
                     :null
                 }
                     
