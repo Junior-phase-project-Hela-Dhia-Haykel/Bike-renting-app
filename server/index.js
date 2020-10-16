@@ -1,9 +1,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
-const Bike = require('../database/bike.js');
 
-const User =require('../database/User.js')
+const Bike = require('../database/bike.js');
+const User =require('../database/User.js');
 
 const app = express();
 const { getBikeByModel, getAllData} = require('./helper.js')
@@ -43,15 +43,7 @@ app.put('/user/:id', (req,res)=>{
           console.log(error);
      })
 })
-
-//add a bike in the database
-app.post('/bike',(req,res)=>{
-     var Bike= new Bike(req.body);
-     Bike.save((err,Bike)=>{
-          res.json(bike)
-     });
-});
-
+//add abike in the database
 //delete a bike from the database
 app.get("/api/bike", getAllData);
 // app.get("/api/homePage", getBikeByModel);
