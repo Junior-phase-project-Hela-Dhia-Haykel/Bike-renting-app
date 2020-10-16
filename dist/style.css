@@ -133,3 +133,7 @@ body {
     white-space: nowrap;
     border-bottom: 1px solid #d0d0d0;
   }
+  .bikePreview {
+    width: 150px;
+    height: auto;
+  }
