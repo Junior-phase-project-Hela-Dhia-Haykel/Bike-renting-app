@@ -12,7 +12,7 @@ const Reservation = (props) => (
         </div>
         <div>
         <p>{props.model}</p>
-        <span> 💰 Your Total : {props.total}</span>
+        <span> 💰 Your Total is : {props.total}</span>
         <button className="btn btn-primary" type="submit" onClick={()=>this.changeView('home')}>Done !</button>
         </div>
      
