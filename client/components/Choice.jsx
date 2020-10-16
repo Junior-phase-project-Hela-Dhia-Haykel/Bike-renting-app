@@ -44,7 +44,7 @@ class Choice extends React.Component {
                 {this.props.bikes.map(bike => 
                     <div key={bike.id} className="bike-row">
                     <div className="bike-data"><img src={bike.imageUrl} className=""/></div>
-                    <div className="bike-data"><input className="input" type='number' min='0' max='20' name="quantity" onChange={() => {this.handleEventOnChange
+                    <div className="bike-data"><input className="input" type='number' min='0' max={bike.quantity} name="quantity" onChange={() => {this.handleEventOnChange
                                                                                                                                         this.updateTotal(bike.price)
                     }}/></div>
                     <div className="bike-data">{bike.price}</div>
