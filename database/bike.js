@@ -5,7 +5,7 @@ const bikeSchema = new mongoose.Schema({
   price: Number,
   imageUrl: String,
   description: String,
-  Quantity: Number,
+  quantity: Number,
   daysOfService: {type: Number, default: 0}
 }, 
   {
