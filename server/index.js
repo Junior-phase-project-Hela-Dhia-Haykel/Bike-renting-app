@@ -13,7 +13,23 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + '../../dist'));
 
 //add or update a user to the dataBase:
+
 app.post('/user',updateUser);
+
+
+//app.post("/userInformation", (req,res)=>{
+//     addNewClient(req.body).then((response)=>{
+ //         res.send(response._id);
+ //    })
+//});
+
+//add new bike model to the database
+app.post('/admin/addmodel', (req,res) => {
+     Bike.Bike.update({model: req.body.model}, req.body,{upsert:true}).then(user =>{
+          console.log(user)
+          res.send('user added')
+     });
+})
 
 
 //update user's infos in the database

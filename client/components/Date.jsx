@@ -19,6 +19,7 @@ class Date extends React.Component {
     }
     handleEventOnClick() {
         this.props.changeView('choice');
+        console.log(typeof this.state.return)
         this.props.setPeriod(this.state.pickup, this.state.return);
     }
 
