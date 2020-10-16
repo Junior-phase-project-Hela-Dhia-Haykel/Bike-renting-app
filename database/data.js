@@ -71,7 +71,7 @@ const simpleData = [
     },
     {
         model: "Road Bike",
-        price:60.00,
+        price:65.00,
         imageUrl: "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1588105694-giant-tcr-advanced-sl-0-disc-1588105677.jpg?crop=1xw:1xh;center,top",
         description: "Giant’s premier race bike gets a full redesign for model year 2021. The frame is 140 grams lighter which helps the top of the line model shown here alight our scale at just 14.5 pounds (size large)—impressive for a bike with power meter, disc brakes, and 42mm-deep tubeless-ready wheels. And even though it weighs less, Giant added some aerodynamic tuning to reduce drag for greater efficiency. The new TCR embraces the trend toward wider tires with clearance for up to 32mm-wide rubber. The build reflects the price: SRAM Red eTap AXS with power meter, carbon bar and stem, and a Cadex (a Giant brand) wheelset with carbon rims and carbon spokes. On the road, this bike is very quick and handles extremely well.",
         Quantity: 11 ,
