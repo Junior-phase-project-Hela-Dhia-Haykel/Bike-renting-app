@@ -7,7 +7,7 @@ const simpleData = [
         price: 10.00,
         imageUrl: "https://i1.adis.ws/i/washford/193694?w=740&h=555&qlt=75&fmt=webp&v=1",
         Quantity: 15 ,
-        description: " Wheel is the perfect bike for kids that still need to build their confidence on two wheels! Its grown-up cream colour and butterfly graphics will make learning to ride a bike loads of fun. Safety is also in mind, with removable stabilisers, and a full chainguard that will protect fingers and clothes from getting caught in the chain. The front and rear caliper brakes will also ensure that your little one will always have plenty of control when riding.",
+        description: " Wheel is the perfect bike for kids that still need to build their confidence on two wheels!Its grown-up cream colour and butterfly graphics will make learning to ride a bike loads of fun. Safety is also in mind, with removable stabilisers, and a full chainguard that will protect fingers and clothes from getting caught in the chain. The front and rear caliper brakes will also ensure that your little one will always have plenty of control when riding.",
         
     },
       {
@@ -106,7 +106,7 @@ const simpleData = [
 ]
 
 const insertSampledata = function() {
-    Bike.create(simpleData)
+    Bike.Bike.create(simpleData)
       .then(() => db.disconnect());
   };
   

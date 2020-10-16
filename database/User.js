@@ -4,18 +4,18 @@ mongoose.Promise = global.Promise;
 
 const userSchema = new mongoose.Schema({
   firstName: String,
-  firstName: String,
-  Email: String,
-  Adresse: String,
-  ZipCode:Number,
+  lastName: String,
+  email: String,
+  adress: String,
+  zipCode:Number,
   city: String,
   phone: Number
 });
 
-const user = db.model('user', userSchema);
+const User = mongoose.model('User', userSchema);
 const addNewClient=(infos)=>{
-  var {firstName, firstName, Email, Adresse, ZipCode, city, phone}=infos;
-  return user.create({firstName, firstName, Email, Adresse, ZipCode, city, phone})
+  var {firstName, lastName, email, adress, zipCode, city, phone}=infos;
+  return User.create({firstName, lastName, email, adress, zipCode, city, phone})
 }
 module.exports.addNewClient=addNewClient;
-module.exports = user;
+module.exports = User;
