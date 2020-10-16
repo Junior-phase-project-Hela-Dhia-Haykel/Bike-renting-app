@@ -4,7 +4,7 @@ class Date extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            pikup: '',
+            pickup: '',
             return: ''
         }
         this.handleEventOnChange = this.handleEventOnChange.bind(this);
@@ -19,6 +19,7 @@ class Date extends React.Component {
     }
     handleEventOnClick() {
         this.props.changeView('choice');
+        this.props.setPeriod(this.state.pickup, this.state.return);
     }
 
     render() {

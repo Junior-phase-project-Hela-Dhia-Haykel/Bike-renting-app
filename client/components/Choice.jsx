@@ -12,16 +12,19 @@ class Choice extends React.Component {
         this.handleEventOnClick = this.handleEventOnClick.bind(this);
     }
     handleEventOnChange(e) {
-        var name = e.target.name;
-        var value = e.target.value;
         this.setState({
-            [name]: value,
+            quantity: e.target.value,
         })
+        this.setState((prevState) => ({
+            total: this.props.bike.price * prevState.quantity
+        }))
     }
     handleEventOnClick() {
         this.props.changeView('info');
+        this.props.setTotal(this.state.total);
     }
-    updateTotal(price) {
+    updateTotal() {
+        
         this.setState({
             total: price * this.state.quantity
         })
@@ -34,31 +37,22 @@ class Choice extends React.Component {
                 <div className="bikes">
                 <div className="bike-table">
                 <div className="bike-header bike-row">
-                <div className="bike-data">Bike type</div>
+                <div className="bike-data">Bike image</div>
                 <div className="bike-data">Quantity</div>
                 <div className="bike-data">Price</div>
-                <div className="bike-data">Gender</div>
+                <div className="bike-data">Model</div>
                 </div>
                 </div>
                 </div>
-                {this.props.bikes.map(bike => 
-                    <div key={bike.id} className="bike-row">
-                    <div className="bike-data"><img src={bike.imageUrl} className=""/></div>
-                    <div className="bike-data"><input className="input" type='number' min='0' max={bike.quantity} name="quantity" onChange={() => {this.handleEventOnChange
-                                                                                                                                        this.updateTotal(bike.price)
-                    }}/></div>
-                    <div className="bike-data">{bike.price}</div>
-                    <div className="bike-data">
-                        <form>
-                            <input type="radio" id="male" name="gender" value="male"/>
-                            <label htmlFor="male"> Male</label><br/>
-                            <input type="radio" id="female" name="gender" value="female"/>
-                            <label htmlFor="female"> Female</label>
-                        </form>
+                 
+                    <div  className="bike-row">
+                    <div className="bike-data"><img src={this.props.bike.imageUrl} className="bikePreview"/></div>
+                    <div className="bike-data"><input className="input" type='number' min='1' max={String(this.props.bike.Quantity)} name="quantity" onChange={this.handleEventOnChange}/></div>
+                    <div className="bike-data">{this.props.bike.price}</div>
+                    <div className="bike-data">{this.props.bike.model}</div>
                     </div>
-                    </div>
-                )}
-                <div>Total: {this.state.total}</div>
+                
+                <div>Total/24h: {this.state.total}</div>
                 <button className="btn btn-primary" type="submit" onClick={this.handleEventOnClick}>Proceed</button>
             </div>
         )
