@@ -6,7 +6,7 @@ import Admin from './components/Admin.jsx';
 import Date from './components/Date.jsx'
 import Choice from './components/Choice.jsx';
 import Info from './components/Info.jsx';
-
+import Reservation from './components/Reservation.jsx';
 
 class App extends React.Component {
     constructor(props) {

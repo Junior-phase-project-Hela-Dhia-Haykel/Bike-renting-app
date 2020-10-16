@@ -1,5 +1,5 @@
 import React from 'react';
-
+import $ from 'jquery';
 
 class Info extends React.Component {
     constructor(props) {
@@ -25,7 +25,15 @@ class Info extends React.Component {
         })
     }
     handleEventOnClick() {
-        $.post('', {})
+        $.post('/user', {
+            firstName: this.state.firstName,
+            lastName: this.state.lastName,
+            email: this.state.email,
+            address: this.state.address,
+            zipCode: this.state.zipCode,
+            city: this.state.city,
+            phone: this.state.phone
+        },'json')
         this.props.changeView('reservation');
     }
 
@@ -37,8 +45,8 @@ class Info extends React.Component {
 			
 			<h1>Your information</h1>
 			Use the following form to complete your reservation.<br/><br/>
-			First name<input type="text" name="firstname" required="required" maxLength="100" className="input" onChange={this.handleEventOnChange}/>
-			Last name<input type="text" name="lastname" required="required" maxLength="100" className="input" onChange={this.handleEventOnChange}/>
+			First name<input type="text" name="firstName" required="required" maxLength="100" className="input" onChange={this.handleEventOnChange}/>
+			Last name<input type="text" name="lastName" required="required" maxLength="100" className="input" onChange={this.handleEventOnChange}/>
 			E-mail<input type="email" name="email" required="required" className="input" onChange={this.handleEventOnChange}/>
 			Address<input type="text" name="address" required="required" maxLength="100" className="input" onChange={this.handleEventOnChange}/>
 			Zipcode<input type="text" name="zipcode" maxLength="32" className="input" onChange={this.handleEventOnChange}/>
