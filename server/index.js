@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const db = require('../database/index.js');
 const app = express();
-const { getBikeByModel, getBikeRandom}=require('./helper.js')
+const { getBikeByModel, getAllData}=require('./helper.js')
 const PORT = 3000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -39,8 +39,8 @@ app.put('/user/:id', (req,res)=>{
 })
 //add abike in the database
 //delete a bike from the database
-app.get("/api/bike", getBikeByModel);
-app.get("/api/homePage", getBikeRandom);
+app.get("/api/bike", getAllData);
+// app.get("/api/homePage", getBikeByModel);
 
 
 
