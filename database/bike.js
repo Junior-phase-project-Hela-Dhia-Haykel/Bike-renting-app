@@ -13,20 +13,22 @@ const bikeSchema = new mongoose.Schema({
   }
 );
 const Bike = db.model('Bike', bikeSchema);
-let findBikeByModel = (model) => {
-  return Bike.find({model}) 
- };
+const addNewModel = (filter, doc)=>{
+  return Bike.update(filter, doc, {upsert: true});
+}
 
 
- let getAll = () => {
+const getAll = () => {
    return Bike.find();
- };
+};
 
-
+const removeBike = (condition) => {
+  return Bike.remove(condition);
+}
 
 
 module.exports ={
-    findBikeByModel,
+    addNewModel,
     getAll,
-    Bike
+    removeBike
   }

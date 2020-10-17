@@ -27,7 +27,7 @@ class Info extends React.Component {
     handleEventOnClick() {
         if(this.state.firstName === '' || this.state.lastName === '' || this.state.email === '' || this.state.address === ''
            || this.state.zipCode === 0 || this.state.city === '' || this.state.phone === 0) return;
-        $.post('/user', {
+        var user = {
             firstName: this.state.firstName,
             lastName: this.state.lastName,
             email: this.state.email,
@@ -35,7 +35,8 @@ class Info extends React.Component {
             zipCode: this.state.zipCode,
             city: this.state.city,
             phone: this.state.phone
-        },'json')
+        }
+        $.post('/user', user,'json').then(result => console.log(result))
         this.props.changeView('reservation');
         this.props.setInfo(this.state.firstName, this.state.lastName, this.state.phone)
     }
@@ -48,13 +49,13 @@ class Info extends React.Component {
 			<h1>Your information</h1>
             <form>
 			Use the following form to complete your reservation.<br/><br/>
-			First name<input type="text" name="firstName" maxLength="100" className="input" onChange={this.handleEventOnChange} required/>
-			Last name<input type="text" name="lastName" maxLength="100" className="input" onChange={this.handleEventOnChange} required/>
+			First name<input type="text" name="firstName" className="input" onChange={this.handleEventOnChange} required/>
+			Last name<input type="text" name="lastName" className="input" onChange={this.handleEventOnChange} required/>
 			E-mail<input type="email" name="email" className="input" onChange={this.handleEventOnChange} required/>
-			Address<input type="text" name="address" maxLength="100" className="input" onChange={this.handleEventOnChange} required/>
-			Zipcode<input type="text" name="zipcode" maxLength="32" className="input" onChange={this.handleEventOnChange} required/>
-			City<input type="text"  name="city" maxLength="100" className="input" onChange={this.handleEventOnChange} required/>
-            Phone<input type="text" name="phone" maxLength="32" className="input" onChange={this.handleEventOnChange} required/>
+			Address<input type="text" name="address" className="input" onChange={this.handleEventOnChange} required/>
+			Zipcode<input type="number" name="zipCode" className="input" onChange={this.handleEventOnChange} required/>
+			City<input type="text"  name="city" className="input" onChange={this.handleEventOnChange} required/>
+            Phone<input type="tel" name="phone" className="input" onChange={this.handleEventOnChange} required/>
             <button className="btn btn-primary" onClick={this.handleEventOnClick}>Confirm</button>
             </form>
 			</div>

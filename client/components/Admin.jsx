@@ -32,11 +32,11 @@ class Admin extends React.Component {
         if(this.state.model === '' || this.state.price === 0 || this.state.imageUrl === '' || this.state.description === ''
            || this.state.quantity === 0) return;
         var newBike = {model: this.state.model, price: this.state.price, imageUrl: this.state.imageUrl, description: this.state.description, quantity: this.state.quantity};
-        $.post('/admin/addmodel', newBike, (err,results) => {
-            if(err) console.log(err);
-            else {
-                console.log(results);
-            }
+        $.post('/admin/addmodel', newBike, (result) => {
+            console.log(result);
+        })
+        this.setState({
+            select: 'access'
         })
     }
     selectAction(option) {
@@ -52,10 +52,15 @@ class Admin extends React.Component {
         }
     }
     confirmRemove() {
-        $.post('/admin/removemodel', {removeModel: this.state.removeModel}, (err,results) => {
-            if(err) console.log(err);
-            else {
-                console.log(results);
+        $.post('/admin/removemodel', {removeModel: this.state.removeModel}, (result) => {
+            if(result.n === 0) {
+                this.setState({
+                    response: 'No such entry!'
+                })
+            } else {
+                this.setState({
+                    response: 'Model successfully removed'
+                })
             }
         })
         this.setState({
