@@ -1,52 +1,201 @@
 body {
-    color: rgb(22, 24, 184);
-    background-color: #b5e1ec;
+  color: rgb(22, 24, 184);
+  background-image: url("https://cdn4.vectorstock.com/i/1000x1000/21/33/logo-for-bicycle-rental-on-vector-25512133.jpg");
+  background-repeat: no-repeat;
+  background-position: right;
+  height: 900px;
+  overflow: hidden;
 }
 .rules {
-    color: darkred;
+font-size: 12px;
+  color: darkred;
+  border-style:solid;
+   border-color:#9494cf;
+    border-width:5px;
+    background-color: antiquewhite;
+   padding:0px;
+   width:50%;
+   height: 560px;
+   position: relative;
+   left: 620px;
+   top: -210px;
 }
 .choose-bike {
-    width: 50%;
-    margin-top: 10px;
-    margin-left: 10px;
+  width: 50%;
+  margin-top: 10px;
+  margin-left: 10px;
+  height: 50%;
 }
 .bike {
-    display: grid;
-    grid-template-rows: auto auto auto;
-    padding: 5px;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  padding: 5px;
 }
 .bikeImg {
-    height: 300px;
-    width: 100px;
+  height: 300px;
+  width: 100px;
 }
 .nav-bar {
-    background-color: #0b3366;
-    margin: 0px;
-    padding: 10px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    color: #F3F3F3;
+  background-color: #556272;
+  margin: 0px;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: #F3F3F3;
+}
+.selected {
+  padding: 5px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  margin-right: 5px;
+  font-size: 2em;
+  border-bottom: 3px solid;
+  cursor: pointer;
+}
+.unselected {
+  padding: 5px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  margin-right: 5px;
+  font-size: 2em;
+  border-bottom: 3px solid;
+        cursor: pointer;
+}
+.app-label {
+  font-size: 2em;
+  margin-right: auto;
+  margin-left: 10px;
+  color: #E4D9DF;
+}
+.add {
+  margin-left: 10px;
+  font-weight: bold;
+}
+.add-bike {
+  width: 80%;
+  float: left;
+}
+.input {
+  width: 40%;
+  display: block;
+  font-size: .9em;
+  height: 28px;
+  margin-bottom: 15px;
+  border: none;
+  border-color: black;
+  padding: 5px;
+  background-color: rgb(183, 204, 204);
+}
+.textarea {
+  width: 40%;
+  font-size: .9em;
+  display: block;
+  height: 100px;
+  border: none;
+  padding: 5px;
+  resize: none;
+  background-color: rgb(183, 204, 204);
+}
+.submit-button {
+  margin-top: 15px;
+  font-size: .9em;
+  height: 30px;
+}
+.bikes {
+  margin: 20px;
+}
+.bike-table {
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 0.5rem;
+  line-height: 1.5;
+  flex: 1 1 auto;
+  border: 1px solid #D0D0D0;
+}
+.bike-header {
+  display: none;
+  font-weight: 700;
+  font-size: 1.1em;
+  background-color: #F2F2F2;
+}
+.bike-header > .bike-data {
+  white-space: normal;
+}
+.bike-row {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  background-color: rgb(190, 199, 212);
+  text-align: center;
+}
+.bike-data {
+  display: flex;
+  flex-flow: row nowrap;
+  flex-grow: 1;
+  flex-basis: 0;
+  padding: 0.5em;
+  word-break: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0px;
+  white-space: nowrap;
+  border-bottom: 1px solid #4E1212;
+}
+.bikePreview {
+  width: 150px;
+  height: auto;
+}
+.introduction {
+  color: #000; 
+  font-size: 20px;
+  text-align:  left;
+  width: 600px;
+  word-wrap: break-word;
+  white-space: initial;
+  border-style:solid;
+    border-width:5px;
+   padding:5px;
+  background-color:rgb(250, 251, 253);
+  position: relative;
+  left: 100px;
+  top: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+  .input-group-choose-bike{
+    width: 30%;
+    height: 700px;
+    position: relative  ;
+    top: -250px ; 
+    left: 800px ;
   }
-  
-  .selected {
-    padding: 5px;
-    color: white;
-    font-weight: bold;
-    margin-right: 5px;
-    font-size: 2em;
+  .btn-outline-secondary{
+    height: 35px;
+    width: 100px;
+    position: relative;
+    left: 410px;
+    top: -37px;
+    background-color:#007bff;
+    cursor: pointer;
+   border: none;
+    border-radius: 3px;
+    font-family: 'PT Serif', sans-serif;
+    color: #D1DDE0;
   }
-  
-  .unselected {
-    padding: 5px;
-    margin-right: 5px;
-    font-size: 2em;
+  .reservation{
+    width: 400px;
+    height: 400px;
+    margin-top: 10px;
+  margin-left: 10px;
   }
-  .app-label {
-    font-size: 2em;
-    margin-right: auto;
-    margin-left: 10px;
-    color: #f3f3f3;
+  .total-button{
+    border-style:solid;
+    border-color:#9494cf;
+     border-width:5px;
+     display: grid;
+     grid-template-rows: auto auto;
+     font-weight: bold;
+     width: 250px;
   }
   button {
     cursor: pointer;
@@ -55,85 +204,4 @@ body {
     font-family: 'PT Serif', sans-serif;
     color: #ECF0F1;
     background-color: #E74C3C;
-  }
-  .add {
-    margin-left: 10px;
-    font-weight: bold;
-  }
-  
-  .add-bike {
-    width: 80%;
-    float: left;
-  }
-  .input {
-    width: 40%;
-    display: block;
-    font-size: .9em;
-    height: 30px;
-    margin-bottom: 15px;
-    border: none;
-    padding: 5px;
-  }
-  
-  .textarea {
-    width: 40%;
-    font-size: .9em;
-    display: block;
-    height: 100px;
-    border: none;
-    padding: 5px;
-    resize: none;
-  }
-  
-  .submit-button {
-    margin-top: 15px;
-    font-size: .9em;
-    height: 30px;
-  }
-
-  .bikes {
-    margin: 20px;
-  }
-  
-  .bike-table {
-    display: flex;
-    flex-flow: column nowrap;
-    margin: 0.5rem;
-    line-height: 1.5;
-    flex: 1 1 auto;
-    border: 1px solid #d0d0d0;
-  }
-  
-  .bike-header {
-    display: none;
-    font-weight: 700;
-    font-size: 1.1em;
-    background-color: #f2f2f2;
-  }
-  
-  .bike-header > .bike-data {
-    white-space: normal;
-  }
-  
-  .bike-row {
-    width: 100%;
-    display: flex;
-    flex-flow: row nowrap;
-  }
-  .bike-data {
-    display: flex;
-    flex-flow: row nowrap;
-    flex-grow: 1;
-    flex-basis: 0;
-    padding: 0.5em;
-    word-break: break-word;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    min-width: 0px;
-    white-space: nowrap;
-    border-bottom: 1px solid #d0d0d0;
-  }
-  .bikePreview {
-    width: 150px;
-    height: auto;
   }

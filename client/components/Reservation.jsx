@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Reservation = (props) => (
-    <div className ='add-bike' >
+    <div className ='reservation' >
         <h2>🛒Your reservation :</h2>
         <div>
         <p>{props.userName}</p>
