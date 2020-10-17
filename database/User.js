@@ -13,9 +13,8 @@ const userSchema = new mongoose.Schema({
 });
 
 const User = mongoose.model('User', userSchema);
-const addNewClient=(infos)=>{
-  var {firstName, lastName, email, adress, zipCode, city, phone}=infos;
-  return User.create({firstName, lastName, email, adress, zipCode, city, phone})
+const addNewClient=(filter, doc)=>{
+  return User.update(filter, doc, {upsert: true});
 }
-module.exports.addNewClient=addNewClient;
-module.exports = User;
+module.exports.addNewClient = addNewClient;
+// module.exports = User;
