@@ -91,14 +91,23 @@ class App extends React.Component {
                 </div>
 
                     {this.state.view === 'home' ?
-                    <div>
-                        {/* description for the services of the company */}
-                    <div className="input-group choose-bike">
+                    
+                    <div className="home">
+                        <div className="introduction">
+                                <p style={{color: 'black'}}>
+                                Bicycles are one of the most ubiquitous forms of transportation in the world. Most children remember their first bike; with it cames the chance to explore their world with more freedom than ever before. As we grow, cycling becomes more than just a childhood ride of passage.
+                                Wind in our hair and feet on the pedals. We have several good reasons to climb on and take a trip. Much of the world uses bicycles as a primary form of daily transportation.
+                                The bike gives to you the possibility of don't-need-to-plan, that leaves space for adventure. Because adventures don't come around the corner during a planned hotel-vacation.
+                                In our company, we help you to spend a special holiday, discover many beautiful areas, and exercise at the same time, as we provide you with all kinds of bicycles.
+                                what are you waiting for.
+                                 </p>
+                        </div>
+                    <div className="input-group-choose-bike">
                         <select className="custom-select" id="bikes" name="bikes" onChange={this.handleEventSelect}>
                             <option defaultValue>Choose a bike model...</option>
                             {this.state.data.map(bike => <option key={bike._id} value={bike.model}>{bike.model}</option>)}
                         </select>
-                        <button className="btn btn-outline-secondary" onClick={() => this.changeView('date')}>Check</button>
+                        <button className="btn-outline-secondary" onClick={() => this.changeView('date')}>Check</button>
                     </div>
                     </div>
                     : this.state.view === 'admin' ?
