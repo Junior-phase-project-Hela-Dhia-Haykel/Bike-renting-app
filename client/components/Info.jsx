@@ -46,9 +46,8 @@ class Info extends React.Component {
     render() {
         return (
             <div className='choose-bike'>
-			<h1>Your information</h1>
+			<h3>Use the following form to complete your reservation.</h3>
             <form>
-			Use the following form to complete your reservation.<br/><br/>
 			First name<input type="text" name="firstName" className="input" onChange={this.handleEventOnChange} required/>
 			Last name<input type="text" name="lastName" className="input" onChange={this.handleEventOnChange} required/>
 			E-mail<input type="email" name="email" className="input" onChange={this.handleEventOnChange} required/>
